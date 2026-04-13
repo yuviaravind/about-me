@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me — Aravind M</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card: #161b22;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --heading: #e6edf3;
+      --accent: #58a6ff;
+      --accent2: #3fb950;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+    .container { max-width: 780px; margin: 0 auto; }
+
+    /* Markdown-rendered content styles */
+    .container h1 {
+      font-size: 2rem; color: var(--heading);
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: .5rem; margin-bottom: 1.5rem;
+    }
+    .container h2 {
+      font-size: 1.3rem; color: var(--accent);
+      margin: 2rem 0 .75rem;
+    }
+    .container ul { list-style: none; padding: 0; }
+    .container ul li {
+      padding: .45rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .container ul li:last-child { border-bottom: none; }
+    .container strong { color: var(--heading); }
+    .container code {
+      background: var(--bg); padding: .15em .4em;
+      border-radius: 4px; font-size: .92em; color: var(--accent2);
+    }
+    .container a { color: var(--accent); text-decoration: none; }
+    .container a:hover { text-decoration: underline; }
+    .container hr {
+      border: none; border-top: 1px solid var(--border); margin: 2rem 0;
+    }
+    .container p { margin: .5rem 0; }
+    .container em { color: #8b949e; }
+  </style>
+</head>
+<body>
+  <div class="container" id="content">Loading…</div>
+  <script>
+    // Fetch the markdown file and render it
+    var mdFile = 'About Me [Aravind M].md';
+    fetch(mdFile)
+      .then(function (res) { return res.text(); })
+      .then(function (md) {
+        document.getElementById('content').innerHTML = marked.parse(md);
+      })
+      .catch(function () {
+        document.getElementById('content').textContent =
+          'Failed to load content. Please try refreshing.';
+      });
+  </script>
+</body>
+</html>
