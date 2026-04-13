@@ -30,5 +30,5 @@
 ## Let's Connect:
 
 *   **Mobile**: `+91 8870387536`
-*   **Email**: `amanoh13@ford.com / yuviaravind16@gmail.com`
+*   **Email**: `yuviaravind16@gmail.com`
 *   **LinkedIn**: `linkedin.com/in/aravind-m-63813b170`
